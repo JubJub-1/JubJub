@@ -41,7 +41,7 @@
 #breaking-news-colour {
   height: 50px;
   width: 100%;
-  background-color: #A0A0A0;
+  background-color: #8DA1CD;
 }
 
 #breaking-news-container {
@@ -53,7 +53,7 @@
     content: "";
     width: 30px;
     height: 30px;
-    background-color: #A0A0A0;
+    background-color: #8DA1CD;
     position: absolute;
     z-index: 2;
   }
