@@ -41,7 +41,7 @@
 #breaking-news-colour {
   height: 50px;
   width: 100%;
-  background-color: #B6C4E2;
+  background-color: #A0A0A0;
 }
 
 #breaking-news-container {
@@ -53,7 +53,7 @@
     content: "";
     width: 30px;
     height: 30px;
-    background-color: #B6C4E2;
+    background-color: #A0A0A0;
     position: absolute;
     z-index: 2;
   }
@@ -128,7 +128,7 @@
   max-width: 100%;
   overflow: hidden;
   font-size: 18px;
-  color: white;
+  color: black;
   font-family: arial;
 
   
