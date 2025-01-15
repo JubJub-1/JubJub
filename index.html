@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>JubJub</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+
+<style>
+body, html {
+  width: 100%;
+  margin: 0;
+  background-color: black;
+}
+
+</style>
+
+
+<body>
+
+
+
+
+<div id="container">
+	<div id="breaking-news-container">
+  	<div id="breaking-news-colour" class="slideup animated"></div>  
+   	<span class="breaking-news-title delay-animated slidein">
+      	// LOCATION //
+    	</span> 
+	</div>  
+
+	<div class="marquee">
+  	<a id="jubjub_location"> Jubjub is at an Undisclosed Location </a>
+	</div>
+
+  <img id="image_location">
+</div>
+
+
+
+
+
+<script>
+  const url = "https://1drv.ms/t/c/301c42519b1ef1f6/ERf-Lsi9BPNJkNkE9Eb3uPABT6dw6ZIfD_FHFIfPyafgOQ?e=h1wOYe";
+  //fetch(url);
+  //.then( jubLoc => jubLoc.text() );
+  
+  
+
+
+
+  function getText() {
+    // Create a new XMLHttpRequest object
+    var request = new XMLHttpRequest();
+    // Open a GET request to the URL of the text file
+    request.open('GET', url, true);
+    // Send the request
+    request.send(null);
+    // Handle the response when the request is complete
+    request.onreadystatechange = function () {
+        if (request.readyState === 4 && request.status === 200) {
+            var type = request.getResponseHeader('Content-Type');
+            // Check if the content type is text
+            if (type.indexOf("text") !== -1) {
+                document.getElementById("jubjub_location").innerHTML = request.responseText;
+                return request.responseText;
+            }
+        }
+    }
+}
+
+getText();
+
+
+  var element = document.getElementById("image_location");
+var images = [
+  "./public/images/JubJub_1.webp",
+  "./public/images/JubJub_2.webp",
+  "./public/images/JubJub_3.webp",
+  "./public/images/JubJub_4.webp",
+  "./public/images/JubJub_5.webp",
+  "./public/images/JubJub_6.webp",
+  "./public/images/JubJub_7.webp",
+  "./public/images/JubJub_8.webp",
+  "./public/images/JubJub_9.webp",
+  "./public/images/JubJub_10.webp",
+  "./public/images/JubJub_11.webp",
+  "./public/images/JubJub_12.webp",
+  "./public/images/JubJub_13.webp",
+  "./public/images/JubJub_14.webp",
+  "./public/images/JubJub_15.webp",
+  "./public/images/JubJub_16.webp",
+  "./public/images/JubJub_17.webp"
+];
+
+function randImg() {
+  var size = images.length
+  var x = Math.floor(size * Math.random())
+  document.getElementById("image_location").innerHTML = images[x];
+
+  element.src = images[x];
+}
+
+randImg();
+</script>
+
+
+
+
+
+</body>
+
+
+</html>
