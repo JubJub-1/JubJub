@@ -68,7 +68,7 @@ getText(); */
 
 
 
-export async function fetch(request, env, ctx) {
+async function fetch(request, env, ctx) {
   const db = env.db; // Assuming you have a D1 database binding named 'DB'
   
   try {
@@ -82,7 +82,7 @@ export async function fetch(request, env, ctx) {
   }
 };
   
-  
+  fetch();
 
 
 
