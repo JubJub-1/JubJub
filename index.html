@@ -40,15 +40,11 @@ body, html {
 
 
 <script>
-  const url = "location.txt";
+/*   const url = "location.txt";
   //fetch(url);
   //.then( jubLoc => jubLoc.text() );
   
-  
-
-
-
-  function getText() {
+    function getText() {
     // Create a new XMLHttpRequest object
     var request = new XMLHttpRequest();
     // Open a GET request to the URL of the text file
@@ -68,7 +64,29 @@ body, html {
     }
 }
 
-getText();
+getText(); */
+
+export default {
+    async fetch(request, env, ctx) {
+      const db = env.DB; // Assuming you have a D1 database binding named 'DB'
+      
+      try {
+        const result = await db.prepare('SELECT Location FROM "jub-loc" ORDER BY Time DESC LIMIT 1').all();
+        const resultReadable = result.results[0].Location;
+        document.getElementById("jubjub_location").innerHTML = (`JubJub is ${resultReadable}`);
+        return new Response(`JubJub is ${resultReadable}`);
+        
+      } catch (e) {
+        return new Response(e);
+      }
+    }
+  };
+  
+  
+  
+
+
+
 
 
   var element = document.getElementById("image_location");
