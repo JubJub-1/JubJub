@@ -36,26 +36,7 @@ body, html {
 </div>
 
 
-<script>
-
-async function fetch(request, env, ctx) {
-    const db = context.env.jubjub_db; // Assuming you have a D1 database binding named 'DB'
-    
-    try {
-      const result = await db.prepare('SELECT Location FROM "jub-loc" ORDER BY Time DESC LIMIT 1').all();
-      const resultReadable = result.results[0].Location;
-
-      document.getElementById("jubjub_location").innerHTML = (`JubJub is ${resultReadable}`);
-      return new Response(`JubJub is ${resultReadable}`);
-      
-    } catch (e) {
-      return new Response(e);
-    }
-  };
-
-fetch();
-  
-</script>
+<script src="/jubUpdate"></script>
 
 
 <script>
